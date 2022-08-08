@@ -45,7 +45,13 @@ namespace DemoDay1
 
         public override string ToString()
         {
-            return Code + "-" + Name + "-" + Gender + "-" + Subject + "-" + Mark;
+            Console.WriteLine("Code" + "\t" + "Name" + "\t" + "Gender" + "\t" + "Subject" + "\t" + "Mark");
+            string sex = "Male";
+            if(Gender == false)
+            {
+                sex = "Female";
+            }
+            return Code + "\t" + Name + "\t" + sex + "\t" + Subject + "\t" + Mark;
         }
     }
 }

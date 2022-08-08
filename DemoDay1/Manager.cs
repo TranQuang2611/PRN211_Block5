@@ -5,18 +5,15 @@ namespace DemoDay1
 {
     internal class Manager
     {
-
+        List<Student> list = new List<Student>();
 
         public Manager()
         {
         }
 
-        public Manager(List<Student> list)
+        internal void addList()
         {
-        }
-
-        internal void addList(List<Student> list)
-        {
+            Console.WriteLine("");
             Console.WriteLine("Enter code :");
             string code = Console.ReadLine();
             Console.WriteLine("Enter name :");
@@ -49,12 +46,22 @@ namespace DemoDay1
             list.Add(new Student(code, name, gender, subject, mark));
         }
 
-        internal void showList(List<Student> list)
+        internal void showList()
         {
-            foreach (Student student in list)
+            Console.WriteLine("");
+            if(list.Count > 0)
             {
-                Console.WriteLine(student.ToString());
+                Console.WriteLine("List student : ");
+                foreach (Student student in list)
+                {
+                    Console.WriteLine(student.ToString());
+                }
             }
+            else
+            {
+                Console.WriteLine("No student !!!");
+            }
+            
         }
     }
 }

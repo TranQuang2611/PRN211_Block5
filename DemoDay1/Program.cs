@@ -7,16 +7,17 @@ namespace DemoDay1
     {
         static void Main(string[] args)
         {
-            List<Student> list = new List<Student>();
-            Manager m = new Manager(list);
+            Manager m = new Manager();
             while (true)
             {
+                Console.WriteLine("");
                 Console.WriteLine("1. Add to list Students");
                 Console.WriteLine("2. Show list Students");
                 Console.WriteLine("3. Update information Student");
                 Console.WriteLine("4. Save to file");
                 Console.WriteLine("5. Load from file");
                 Console.WriteLine("0. Exit");
+                Console.WriteLine("");
                 Console.WriteLine("Enter Option");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -28,17 +29,14 @@ namespace DemoDay1
                         }
                     case 1:
                         {
-                            m.addList(list);
+                            m.addList();
+                            Console.WriteLine("");
                             Console.WriteLine("Add OK");
                             break;
                         }
                     case 2:
                         {
-                            m.showList(list);
-                            if(list.Count == 0)
-                            {
-                                Console.WriteLine("No student !!!!!!!!!!!");
-                            }
+                            m.showList();
                             break;
                         }
                     case 3:
@@ -63,11 +61,6 @@ namespace DemoDay1
                         }
                 }
             }
-        }
-
-        private static void showList(List<Student> list)
-        {
-            
         }
     }
 }
