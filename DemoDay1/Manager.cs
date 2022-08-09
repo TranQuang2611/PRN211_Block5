@@ -48,20 +48,12 @@ namespace DemoDay1
             }
             Console.WriteLine("Enter mark");
             int mark = Convert.ToInt32(Console.ReadLine());
-            while (checkNull(mark.ToString()))
+            Regex regex = new Regex("^[0-9]");
+            while (checkNull(mark.ToString()) || !regex.IsMatch(mark.ToString()) || mark>10)
             {
                 Console.WriteLine("Enter mark again :");
                 mark = Convert.ToInt32(Console.ReadLine());
-                Regex regex = new Regex("^[0-10]+$");
-                if (!regex.IsMatch(mark.ToString()))
-                {
-                    Console.WriteLine("Enter mark again :");
-                    mark = Convert.ToInt32(Console.ReadLine());
-                }
-                else
-                {
-                    break;
-                }
+                
             }
             list.Add(new Student(code,name, gender, subject, mark));
             saveFile();
@@ -160,7 +152,7 @@ namespace DemoDay1
             if (list.Count > 0)
             {
                 Console.WriteLine("List student : ");
-                Console.WriteLine("Code" + "\t" + "Name" + "\t" + "Gender" + "\t" + "Subject" + "\t\t" + "Mark");
+                Console.WriteLine("Code" + "\t" + "Name" + "\t" + "Gender" + "\t" + "Subject" + "\t" + "Mark");
                 foreach (Student student in list)
                 {
                     Console.WriteLine(student.ToString());

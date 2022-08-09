@@ -66,11 +66,7 @@ namespace DemoDay1
                                 Console.WriteLine("Enter new mark : ");
                                 int mark = Convert.ToInt32(Console.ReadLine());
                                 m.update(code,name,mark);
-                            }
-                            else
-                            {
-                                Console.WriteLine("Student not found !!!");
-                            }                
+                            }              
                             break;
                         }
                     case 4:
@@ -88,14 +84,17 @@ namespace DemoDay1
                         {
                             Console.WriteLine("Enter code");
                             string code = Console.ReadLine();
-                            if (m.checkCode(code))
+                            bool check = false;
+                            while (!m.checkCode(code) || m.checkNull(code))
+                            {
+                                Console.WriteLine("Enter code again:");
+                                code = Console.ReadLine();
+                                check = true;
+                            }
+                            if (check == true)
                             {
                                 m.detele(code);
                                 Console.WriteLine("Delete OK !!!");
-                            }
-                            else
-                            {
-                                Console.WriteLine("Student not found !!!");
                             }
                             break;
                         }
