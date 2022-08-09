@@ -44,8 +44,7 @@ namespace DemoDay1
         }
 
         public override string ToString()
-        {
-            Console.WriteLine("Code" + "\t" + "Name" + "\t" + "Gender" + "\t" + "Subject" + "\t" + "Mark");
+        {           
             string sex = "Male";
             if(Gender == false)
             {
