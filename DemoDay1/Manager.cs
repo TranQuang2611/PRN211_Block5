@@ -110,7 +110,7 @@ namespace DemoDay1
                         Console.WriteLine(line);
                         string []pro = line.Split("\t");
                         bool gender = false;
-                        if (line[3].Equals("Male"))
+                        if (pro[2].Equals("Male"))
                         {
                             gender = true;
                         }
