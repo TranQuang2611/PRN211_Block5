@@ -1,1 +1,11 @@
-1	q	Male	Math	2
+1	1	Male	Math	10
+2	2	Male	Math	9
+3	3	Male	Math	10
+4	quang	Female	Math	0
+5	quang2	Female	Math	0
+6	quang3	Female	Math	0
+7	tran xuan quang	Female	Math	9
+8	dang viet anh	Female	Math	9
+9	nguyen quoc anh	Male	Math	8
+10	nguyen van a	Male	Math	7
+11	nguyen dinh thang	Male	Literature	5
