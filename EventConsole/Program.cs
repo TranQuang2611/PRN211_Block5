@@ -70,7 +70,7 @@ namespace EventConsole
 
             //mo phong text value change cho cac textbox
             //moi khi value cua textbox bi thay doi thong bao Oldvalue : xxx . Newvalue : xxx va thay doi text cua check tuong ung
-
+          
             while (true)
             {
                 Console.WriteLine("Enter textbox you want to change : (1,2,3,4.....)");
@@ -85,9 +85,10 @@ namespace EventConsole
                     {
                         Console.WriteLine("Enter new text : ");                   
                         list[i].Text = Console.ReadLine();
-                        listCheckBox[i].Text = list[i].Text;                     
+                        listCheckBox[i].Text = list[i].Text; 
+                                             
                     }
-                }
+                }              
             }
 
         }
@@ -116,15 +117,15 @@ namespace EventConsole
             {
                 Textbox textbox = new Textbox();
                 Console.WriteLine("Enter text :");
-                textbox.Text = Console.ReadLine();
-                textbox.changeText += Textbox_changeText1;
+                textbox.Text = Console.ReadLine();    
+                textbox.changeText += Textbox_changeText;
                 list.Add(textbox);
             }
         }
 
-        private static void Textbox_changeText1(string Oldtext, string Newtext)
+        private static void Textbox_changeText(string Oldtext, string Newtext)
         {
-            Console.WriteLine("Oldtext : "+ Oldtext + " Newtext : " +Newtext);
+            Console.WriteLine("Oldtext: "+ Oldtext + " -- Newtext: " +Newtext);
         }
     }
 }
