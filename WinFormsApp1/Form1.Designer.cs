@@ -32,21 +32,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.codeBox = new System.Windows.Forms.TextBox();
             this.nameBox = new System.Windows.Forms.TextBox();
-            this.salaryBox = new System.Windows.Forms.TextBox();
+            this.markBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.maleButton = new System.Windows.Forms.RadioButton();
             this.femaleButton = new System.Windows.Forms.RadioButton();
-            this.roleBox = new System.Windows.Forms.ComboBox();
+            this.subjectBox = new System.Windows.Forms.ComboBox();
             this.addButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
             this.deleteButoon = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
-            this.listEmployee = new System.Windows.Forms.ListBox();
+            this.listStudent = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -58,9 +58,9 @@
             this.label1.ForeColor = System.Drawing.Color.Green;
             this.label1.Location = new System.Drawing.Point(339, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(319, 40);
+            this.label1.Size = new System.Drawing.Size(298, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Imployee Information";
+            this.label1.Text = "Student Information";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label2
@@ -88,12 +88,12 @@
             this.nameBox.Size = new System.Drawing.Size(159, 23);
             this.nameBox.TabIndex = 7;
             // 
-            // salaryBox
+            // markBox
             // 
-            this.salaryBox.Location = new System.Drawing.Point(180, 415);
-            this.salaryBox.Name = "salaryBox";
-            this.salaryBox.Size = new System.Drawing.Size(159, 23);
-            this.salaryBox.TabIndex = 8;
+            this.markBox.Location = new System.Drawing.Point(180, 415);
+            this.markBox.Name = "markBox";
+            this.markBox.Size = new System.Drawing.Size(159, 23);
+            this.markBox.TabIndex = 8;
             // 
             // label3
             // 
@@ -135,9 +135,9 @@
             this.label5.ForeColor = System.Drawing.Color.Green;
             this.label5.Location = new System.Drawing.Point(57, 417);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 21);
+            this.label5.Size = new System.Drawing.Size(61, 21);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Salary : ";
+            this.label5.Text = "Mark : ";
             // 
             // maleButton
             // 
@@ -163,13 +163,17 @@
             this.femaleButton.Text = "Female";
             this.femaleButton.UseVisualStyleBackColor = true;
             // 
-            // roleBox
+            // subjectBox
             // 
-            this.roleBox.FormattingEnabled = true;
-            this.roleBox.Location = new System.Drawing.Point(180, 349);
-            this.roleBox.Name = "roleBox";
-            this.roleBox.Size = new System.Drawing.Size(159, 23);
-            this.roleBox.TabIndex = 16;
+            this.subjectBox.FormattingEnabled = true;
+            this.subjectBox.Items.AddRange(new object[] {
+            "Math",
+            "English",
+            "Japanese"});
+            this.subjectBox.Location = new System.Drawing.Point(180, 349);
+            this.subjectBox.Name = "subjectBox";
+            this.subjectBox.Size = new System.Drawing.Size(159, 23);
+            this.subjectBox.TabIndex = 16;
             // 
             // addButton
             // 
@@ -181,6 +185,7 @@
             this.addButton.TabIndex = 17;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // updateButton
             // 
@@ -192,6 +197,7 @@
             this.updateButton.TabIndex = 18;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // deleteButoon
             // 
@@ -203,6 +209,7 @@
             this.deleteButoon.TabIndex = 19;
             this.deleteButoon.Text = "Delete";
             this.deleteButoon.UseVisualStyleBackColor = true;
+            this.deleteButoon.Click += new System.EventHandler(this.deleteButoon_Click);
             // 
             // saveButton
             // 
@@ -214,6 +221,7 @@
             this.saveButton.TabIndex = 20;
             this.saveButton.Text = "Save File";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // loadButton
             // 
@@ -225,47 +233,50 @@
             this.loadButton.TabIndex = 21;
             this.loadButton.Text = "Load File";
             this.loadButton.UseVisualStyleBackColor = true;
+            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
             // 
             // exitButton
             // 
             this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.exitButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.exitButton.Location = new System.Drawing.Point(444, 408);
+            this.exitButton.Location = new System.Drawing.Point(444, 456);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(95, 30);
             this.exitButton.TabIndex = 22;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // listEmployee
+            // listStudent
             // 
-            this.listEmployee.FormattingEnabled = true;
-            this.listEmployee.ItemHeight = 15;
-            this.listEmployee.Location = new System.Drawing.Point(593, 140);
-            this.listEmployee.Name = "listEmployee";
-            this.listEmployee.Size = new System.Drawing.Size(337, 289);
-            this.listEmployee.TabIndex = 23;
+            this.listStudent.FormattingEnabled = true;
+            this.listStudent.ItemHeight = 15;
+            this.listStudent.Location = new System.Drawing.Point(593, 140);
+            this.listStudent.Name = "listStudent";
+            this.listStudent.Size = new System.Drawing.Size(337, 289);
+            this.listStudent.TabIndex = 23;
+            this.listStudent.SelectedIndexChanged += new System.EventHandler(this.listStudent_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 498);
-            this.Controls.Add(this.listEmployee);
+            this.Controls.Add(this.listStudent);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.loadButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.deleteButoon);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.addButton);
-            this.Controls.Add(this.roleBox);
+            this.Controls.Add(this.subjectBox);
             this.Controls.Add(this.femaleButton);
             this.Controls.Add(this.maleButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.salaryBox);
+            this.Controls.Add(this.markBox);
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.codeBox);
             this.Controls.Add(this.label2);
@@ -283,20 +294,20 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox codeBox;
         private System.Windows.Forms.TextBox nameBox;
-        private System.Windows.Forms.TextBox salaryBox;
+        private System.Windows.Forms.TextBox markBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton maleButton;
         private System.Windows.Forms.RadioButton femaleButton;
-        private System.Windows.Forms.ComboBox roleBox;
+        private System.Windows.Forms.ComboBox subjectBox;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button deleteButoon;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button loadButton;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.ListBox listEmployee;
+        private System.Windows.Forms.ListBox listStudent;
     }
 }
