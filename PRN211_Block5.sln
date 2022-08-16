@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication", "WebApplic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delegate_Demo", "Delegate_Demo\Delegate_Demo.csproj", "{825AB449-1D9C-457D-ADCF-62A9FEE09494}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventConsole", "EventConsole\EventConsole.csproj", "{9663A8DF-C279-4A52-A5DF-2BB4B804B4C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventConsole", "EventConsole\EventConsole.csproj", "{9663A8DF-C279-4A52-A5DF-2BB4B804B4C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Winform_ADO_NET", "Winform_ADO_NET\Winform_ADO_NET.csproj", "{F9B2F167-0A7E-43A8-B471-C604A8928C26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{9663A8DF-C279-4A52-A5DF-2BB4B804B4C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9663A8DF-C279-4A52-A5DF-2BB4B804B4C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9663A8DF-C279-4A52-A5DF-2BB4B804B4C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9B2F167-0A7E-43A8-B471-C604A8928C26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9B2F167-0A7E-43A8-B471-C604A8928C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9B2F167-0A7E-43A8-B471-C604A8928C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9B2F167-0A7E-43A8-B471-C604A8928C26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
