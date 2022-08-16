@@ -50,6 +50,10 @@ namespace Winform_ADO_NET
 
         private void dataProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.RowIndex == -1)
+            {
+                return;
+            }
             idBox.ReadOnly = true;
             idBox.Text = dataProduct.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
             nameBox.Text = dataProduct.Rows[e.RowIndex].Cells["ProductName"].FormattedValue.ToString();
@@ -66,7 +70,7 @@ namespace Winform_ADO_NET
                 + Convert.ToInt32(unitInStockBox.Text)+","
                 + "'" + imgBox.Text + "',"
                 + categoryBox.SelectedValue
-                + ")";
+                + ")";                    
             if (new DataProvider().executeNonQuery(insert))
             {
                 MessageBox.Show("Inserted");
@@ -80,28 +84,37 @@ namespace Winform_ADO_NET
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            string update = "update Products set"
+            try
+            {              
+                if (dataProduct.SelectedCells != null)
+                {
+                    string update = "update Products set"
                     + " ProductName = '" + nameBox.Text + "',"
                     + " UnitPrice = '" + unitPriceBox.Text + "',"
                     + " UnitsInStock =" + Convert.ToInt32(unitInStockBox.Text) + ","
                     + " Image = '" + imgBox.Text + "',"
                     + " CategoryID =" + categoryBox.SelectedValue + " where ProductID =" + Convert.ToInt32(idBox.Text);
-            if (dataProduct.SelectedCells != null)
-            {
-                if (new DataProvider().executeNonQuery(update))
-                {
-                    MessageBox.Show("Updated");
-                    loadData();
+                    if (new DataProvider().executeNonQuery(update))
+                    {
+                        MessageBox.Show("Updated");
+                        loadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Insert sai");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Insert sai");
+                    MessageBox.Show("Vui long chon de update");
                 }
             }
-            else
+            catch (Exception)
             {
+
                 MessageBox.Show("Vui long chon de update");
-            }          
+            }
+             
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -125,23 +138,16 @@ namespace Winform_ADO_NET
             }
         }
 
-        private void nameBox_Enter(object sender, EventArgs e)
-        {
-            
-            
-        }
-
         private void nameBox_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
             {
-                if (string.IsNullOrEmpty(nameBox.Text))
+                if (!string.IsNullOrEmpty(nameBox.Text))
                 {
-                    string name = nameBox.Text.Trim();
-                    string select = "select * from Products where ProductName = '" + name + "'";
+                    string name = nameBox.Text.Trim().ToLower();
+                    string select = "select * from Products where ProductName like '%"+name+"%'";
                     dt = new DataProvider().executeQuery(select);
                     dataProduct.DataSource = dt;
-                    dataProduct.Refresh();
                 }
                 else
                 {

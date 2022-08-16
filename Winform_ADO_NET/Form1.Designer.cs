@@ -133,7 +133,6 @@
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(143, 23);
             this.nameBox.TabIndex = 9;
-            this.nameBox.Enter += new System.EventHandler(this.nameBox_Enter);
             this.nameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nameBox_KeyDown);
             // 
             // imgBox
@@ -146,6 +145,11 @@
             // unitInStockBox
             // 
             this.unitInStockBox.Location = new System.Drawing.Point(153, 236);
+            this.unitInStockBox.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.unitInStockBox.Name = "unitInStockBox";
             this.unitInStockBox.Size = new System.Drawing.Size(143, 23);
             this.unitInStockBox.TabIndex = 11;
