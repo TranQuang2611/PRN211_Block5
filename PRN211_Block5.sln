@@ -13,7 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delegate_Demo", "Delegate_D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventConsole", "EventConsole\EventConsole.csproj", "{9663A8DF-C279-4A52-A5DF-2BB4B804B4C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Winform_ADO_NET", "Winform_ADO_NET\Winform_ADO_NET.csproj", "{F9B2F167-0A7E-43A8-B471-C604A8928C26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Winform_ADO_NET", "Winform_ADO_NET\Winform_ADO_NET.csproj", "{F9B2F167-0A7E-43A8-B471-C604A8928C26}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Winform_EF_NET", "Winform_EF_NET\Winform_EF_NET.csproj", "{CE8C955F-CC44-4D4D-AC8C-A4DC7D2C3427}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice_Winform_EF", "Practice_Winform_EF\Practice_Winform_EF.csproj", "{7B810A08-9738-4710-9582-51EF88FF5940}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{F9B2F167-0A7E-43A8-B471-C604A8928C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9B2F167-0A7E-43A8-B471-C604A8928C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9B2F167-0A7E-43A8-B471-C604A8928C26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE8C955F-CC44-4D4D-AC8C-A4DC7D2C3427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE8C955F-CC44-4D4D-AC8C-A4DC7D2C3427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE8C955F-CC44-4D4D-AC8C-A4DC7D2C3427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE8C955F-CC44-4D4D-AC8C-A4DC7D2C3427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B810A08-9738-4710-9582-51EF88FF5940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B810A08-9738-4710-9582-51EF88FF5940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B810A08-9738-4710-9582-51EF88FF5940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B810A08-9738-4710-9582-51EF88FF5940}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
