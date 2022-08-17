@@ -55,6 +55,7 @@
             this.deleteButton.TabIndex = 49;
             this.deleteButton.Text = "DELETE";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // updateButton
             // 
@@ -74,6 +75,7 @@
             this.insertButton.TabIndex = 47;
             this.insertButton.Text = "INSERT";
             this.insertButton.UseVisualStyleBackColor = true;
+            this.insertButton.Click += new System.EventHandler(this.insertButton_Click);
             // 
             // addressBox
             // 
