@@ -7,6 +7,7 @@ namespace WebApplication.Models
     {
         [Required(AllowEmptyStrings = false, ErrorMessage = "This string is empty")]
         public string Code { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "This string is empty")]    
         public string Name { get; set; }
 
         public int Age { get; set; }

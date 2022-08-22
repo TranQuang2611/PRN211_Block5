@@ -113,6 +113,24 @@ namespace WebApplication.Controllers
             }
         }
 
+        public IActionResult Delete(string id)
+        {
+            deleteCus(id);
+            return RedirectToAction("Add");
+        }
+
+        private void deleteCus(string id)
+        {
+            foreach (var c in list)
+            {
+                if(c.Code == id)
+                {
+                    list.Remove(c);
+                    break;
+                }
+            }
+        }
+
         private void updateCus(Customer customer)
         {
             foreach (var c in list)
