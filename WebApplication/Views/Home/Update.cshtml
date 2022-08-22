@@ -1,0 +1,20 @@
+﻿@using WebApplication.Models
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model Customer
+<div>
+    <form asp-action="Update" asp-controller="Home" method="post">
+        <label>Code</label> <input name="code" readonly value="@Model.Code" asp-for="Code"/>
+        <br />
+        <label>Name</label> <input name="name" value="@Model.Name" asp-for="Name"/>
+        <br />
+        <label>Age</label> <input type="number" name="age" value="@Model.Age" asp-for="Age"/>
+
+        <button type="submit">Update</button>
+    </form>
+</div>

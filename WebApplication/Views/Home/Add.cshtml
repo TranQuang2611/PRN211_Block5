@@ -1,0 +1,39 @@
+﻿@using WebApplication.Models
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<Customer>
+<h1>List Customer</h1>
+
+<div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Name</th>                
+                <th>Age</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td><a asp-action="Detail" asp-controller="Home" asp-route-id="@c.Code">@c.Code</a></td> 
+                    <td> @c.Name</td> 
+                    <td> @c.Age</td>
+                    <td><a asp-action="Update" asp-controller="Home" asp-route-id="@c.Code">Update |</a> &nbsp <a>Delete</a></td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+    <a href="/Home/Show">Continue</a>
+</div>
+
+

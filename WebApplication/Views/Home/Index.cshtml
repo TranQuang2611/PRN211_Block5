@@ -1,0 +1,43 @@
+﻿@using WebApplication.Models
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    //Viet code C#
+    string mess = "Welcome to Customer Management";
+    Customer customer = @ViewData["Data"] as Customer;
+
+}
+
+@model Customer
+
+<h1 style="color:red">@mess</h1>
+
+<div style="padding-bottom:30px">
+    @ViewData["Message"]
+    <br />Code : @customer.Code
+    <br />Name : @customer.Name
+    <br />Age : @customer.Age
+</div>
+
+<div style="padding-bottom:30px">
+    @ViewBag.Mess
+    <br />Code : @ViewBag.Customer.Code
+    <br />Name : @ViewBag.Customer.Name
+    <br />Age : @ViewBag.Customer.Age
+</div>
+
+
+<div style="padding-bottom:30px">
+    <br />Truyen model
+    <br />Code : @Model.Code
+    <br />Name : @Model.Name
+    <br />Age : @Model.Age
+</div>
+
+<div>
+    <form action="/Home/Show" method="get">
+        <input type="submit" value="Create new Customer"/>
+    </form>
+</div>
