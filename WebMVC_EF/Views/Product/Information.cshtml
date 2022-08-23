@@ -1,0 +1,26 @@
+﻿@using WebMVC_EF.Models
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Product
+
+<h2>Product Inforamtion</h2>
+
+<label>ProductId :</label> @Model.ProductId
+<br />
+<label>ProductName :</label> @Model.ProductName
+<br />
+<label>UnitPrice :</label> @Model.UnitPrice
+<br /> 
+<label>UnitsInStock :</label> @Model.UnitsInStock
+<br />
+<label>CategoryId :</label> @Model.CategoryId
+<br />
+<label>Image :</label> <img src="@Model.Image" style="height:50px;width:50px"/>
+
+
+
+

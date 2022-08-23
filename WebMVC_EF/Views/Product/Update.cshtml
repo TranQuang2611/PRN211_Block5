@@ -1,0 +1,42 @@
+﻿@using WebMVC_EF.Models
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    List<Category> categories = ViewBag.cate;
+}
+
+@model Product
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<h2 style="display:flex;justify-content:center">Product Information</h2>
+<h3 style="display:flex;justify-content:center">@ViewBag.mess</h3>
+<div style="display:flex;justify-content:center">
+    <form asp-action="Update" asp-controller="Product" method="post">
+        <label>ProductId</label><input class="form-control" required value="@Model.ProductId" readonly asp-for="ProductId" />
+        <br />
+        <label>ProductName</label><input class="form-control" required value="@Model.ProductName" asp-for="ProductName" />
+        <br />
+        <label>UnitPrice</label><input class="form-control" required value="@Model.UnitPrice" asp-for="UnitPrice" />
+        <br />
+        <label>UnitsInStock</label><input class="form-control" required value="@Model.UnitsInStock" asp-for="UnitsInStock" />
+        <br />
+        <label>Category</label>
+        <select asp-for="CategoryId">
+            @foreach (var c in categories)
+           {
+               <option value="@c.CategoryId">@c.CategoryName</option>
+           }
+        </select>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+
+<div style="display:flex;justify-content:center">
+    <a href="/Product/Index">Trở lại</a>
+</div>
+

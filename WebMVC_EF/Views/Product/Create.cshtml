@@ -1,0 +1,31 @@
+﻿@using WebMVC_EF.Models
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    List <Category> categories = ViewBag.cat;
+}
+@model Product
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<div style="display:flex;justify-content:center">
+    <form asp-action="Create" asp-controller="Product" method="post">
+        <label>ProductName</label><input name="name" class="form-control" required asp-for="ProductName" />
+        <br />
+        <label>UnitPrice</label><input  name="price" class="form-control" required asp-for="UnitPrice" />
+        <br />
+        <label>UnitsInStock</label><input  name="stock" class="form-control" required  asp-for="UnitsInStock" />
+        <br />
+        <label>Category</label>
+        <select name="cid">
+            @foreach (Category m in categories)
+           {
+               <option value="@m.CategoryId">@m.CategoryName</option>
+           }
+        </select>
+        <br />
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
