@@ -57,6 +57,8 @@ namespace WebApplication.Controllers
         //    return View();
         //}
         static List<Customer> list = new List<Customer>();
+
+
         [HttpPost]
         public IActionResult Add(Customer customer)
         {
@@ -77,6 +79,7 @@ namespace WebApplication.Controllers
                 return View("Show");
             }
         }
+
 
         [HttpGet]
         public IActionResult Add()
